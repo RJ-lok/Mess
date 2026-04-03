@@ -1,0 +1,87 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family:Arial;
+    min-height:100vh;
+    background:linear-gradient(to right,#6f2b82,#f8b500);
+}
+.header{
+    padding:20px;
+    text-align:center;
+    color:white;
+}
+.center-container{
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
+.box{
+    background:linear-gradient(to bottom,#fff,#e0f7ff);
+    padding:30px;
+    border-radius:15px;
+    width:420px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+.box h2{text-align:center;margin-bottom:20px;}
+input{
+    width:100%;
+    padding:15px;
+    margin:15px 0;
+    border-radius:10px;
+    border:2px solid #999;
+    font-size:16px;
+}
+button{
+    padding:12px 35px;
+    font-size:16px;
+    border-radius:8px;
+    border:none;
+    background:linear-gradient(to right,#007bff,#ff69b4);
+    color:white;
+    cursor:pointer;
+}
+.msg{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    margin-top:15px;
+}
+/* ================= THERMAL PRINT ================= */
+@media print {
+
+    @page {
+        size: 80mm auto;
+        margin: 0;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        width: 80mm;
+        font-family: monospace;
+        font-size: 12px;
+    }
+
+    /* Hide everything */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Show only print area */
+    #printArea, 
+    #printArea * {
+        visibility: visible;
+    }
+
+    #printArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80mm;
+        padding: 5mm;
+    }
+}
+
+/* Hide print area on screen */
+#printArea {
+    display: none;
+}
